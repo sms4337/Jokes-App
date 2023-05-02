@@ -1,0 +1,79 @@
+Sample API example:
+
+PUT /rating
+Body: id, category, user, rating
+Body Examplei: 
+{
+  "id": "6441aeb5942f277c6aac97a8",
+  "category": "office",
+  "user": "asdsf",
+  "rating": 3
+}
+response: 
+{
+    "lastErrorObject": {
+        "n": 1,
+        "updatedExisting": true
+    },
+    "value": {
+        "_id": "6441aeb5942f277c6aac97a8",
+        "joke": "Why did the scarecrow get promoted? Because he was outstanding in his field.",
+        "rating": {
+            "alice": 3,
+            "vinesh": 3,
+            "asdf": 3,
+            "asdsf": 3
+        }
+    },
+    "ok": 1,
+    "$clusterTime": {
+        "clusterTime": {
+            "$timestamp": "7224291848372617221"
+        },
+        "signature": {
+            "hash": "iGQSdBBinRHTIEUHg/TQvqaWXMM=",
+            "keyId": {
+                "low": 1,
+                "high": 1670858089,
+                "unsigned": false
+            }
+        }
+    },
+    "operationTime": {
+        "$timestamp": "7224291848372617221"
+    }
+}
+
+
+
+GET /rating
+Query: id, category, user
+response:
+{
+    "avgRating": 3,
+    "userRating": 0,
+    "userCount": 4
+}
+
+
+
+GET /nextjoke
+Query: category, user
+response: 
+{
+    "id": "6441aeb5942f277c6aac97a8",
+    "joke": "Why did the scarecrow get promoted? Because he was outstanding in his field.",
+    "rating": {
+        "alice": 3,
+        "vinesh": 3,
+        "asdf": 3,
+        "asdsf": 3
+    }
+}
+
+
+GET /all
+Complete DB 
+
+
+

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ratings by Category</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    var data = <%- JSON.stringify(data) %>;
+    
+ Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: data.title
+    },
+    xAxis: {
+        categories: data.categories,
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rating'
+        }
+    },
+   series:  data.series
+ });
+  </script>
+</body>
+</html>
